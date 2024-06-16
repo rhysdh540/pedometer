@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var steps: Int = 0
-    @State private var distance: Double = 0
+    @State private var data: HealthData = HealthData(date: Date(), steps: 0, distance: 0)
     @State private var isAuthorized = HealthKitManager.shared.isAuthorized()
     
     var body: some View {
         NavigationStack {
             VStack {
                 if isAuthorized {
-                    Text("Steps: \(steps)")
-                    Text(String(format: "Distance: %.2f km", distance / 1000))
+                    Text("Steps: \(data.steps)")
+                    Text(String(format: "Distance: %.2f km", data.distance / 1000))
                         .onAppear {
                             loadData()
                         }
@@ -36,9 +35,7 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: {
-                        loadData()
-                    }) {
+                    Button(action: loadData) {
                         Image(systemName: "arrow.clockwise.circle")
                     }
                 }
@@ -48,15 +45,14 @@ struct ContentView: View {
     }
     
     private func loadData() {
-        HealthKitManager.shared.fetchTodayData { steps, distance in
+        HealthKitManager.shared.fetchHealthData(for: Date()) { data in
             DispatchQueue.main.async {
-                self.steps = steps
-                self.distance = distance
+                self.data = data
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

@@ -24,8 +24,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         switch complication.family {
         case .modularSmall, .circularSmall, .utilitarianSmall, .extraLarge:
-            HealthKitManager.shared.fetchTodayData { steps, distance in
-                let template = self.createTemplate(for: complication.family, steps: steps, distance: distance)
+            HealthKitManager.shared.fetchHealthData(for: Date()) { data in
+                let template = self.createTemplate(for: complication.family, steps: data.steps, distance: data.distance)
                 let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
                 handler(entry)
             }

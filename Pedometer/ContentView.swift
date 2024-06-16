@@ -27,20 +27,12 @@ struct ContentView: View {
                     }
                     .navigationBarTitle("Health Data")
                     .navigationBarItems(trailing: Button(action: {
-                        healthKitManager.fetchHealthData { data in
-                            DispatchQueue.main.async {
-                                self.healthData = data
-                            }
-                        }
+                        
                     }) {
                         Image(systemName: "arrow.clockwise.circle")
                     })
                     .onAppear {
-                        healthKitManager.fetchHealthData { data in
-                            DispatchQueue.main.async {
-                                self.healthData = data
-                            }
-                        }
+                        refresh()
                     }
                 } else {
                     Text("Please grant HealthKit permissions.")
@@ -48,11 +40,7 @@ struct ContentView: View {
                         healthKitManager.requestAuthorization { success in
                             if success {
                                 self.isAuthorized = true
-                                healthKitManager.fetchHealthData { data in
-                                    DispatchQueue.main.async {
-                                        self.healthData = data
-                                    }
-                                }
+                                refresh()
                             }
                         }
                     }
@@ -67,9 +55,19 @@ struct ContentView: View {
         formatter.dateStyle = .short
         return formatter
     }
+    
+    private func refresh() {
+        let now = Date()
+        let lastWeek = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: now)!
+        healthKitManager.fetchHealthDataRange(startDate: lastWeek, endDate: now) { data in
+            DispatchQueue.main.async {
+                self.healthData = data
+            }
+        }
+    }
 }
 
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
