@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		988331032C202F1B00DDB054 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988331022C202F1B00DDB054 /* WidgetKit.framework */; };
+		988331052C202F1B00DDB054 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988331042C202F1B00DDB054 /* SwiftUI.framework */; };
+		988331082C202F1B00DDB054 /* Pedometer_Watch_Complications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988331072C202F1B00DDB054 /* Pedometer_Watch_Complications.swift */; };
+		9883310A2C202F1B00DDB054 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988331092C202F1B00DDB054 /* AppIntent.swift */; };
+		9883310C2C202F1C00DDB054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9883310B2C202F1C00DDB054 /* Assets.xcassets */; };
+		988331102C202F1C00DDB054 /* Pedometer Watch ComplicationsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 988331002C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		98BCAA332C1CB16800919BA5 /* PedometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA322C1CB16800919BA5 /* PedometerApp.swift */; };
 		98BCAA352C1CB16800919BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA342C1CB16800919BA5 /* ContentView.swift */; };
 		98BCAA372C1CB16900919BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BCAA362C1CB16900919BA5 /* Assets.xcassets */; };
@@ -18,10 +24,16 @@
 		98BCAA4C2C1CB16A00919BA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BCAA4B2C1CB16A00919BA5 /* Preview Assets.xcassets */; };
 		98BCAA5B2C1CB21000919BA5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA5A2C1CB21000919BA5 /* HealthKitManager.swift */; };
 		98BCAA5C2C1CB21000919BA5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA5A2C1CB21000919BA5 /* HealthKitManager.swift */; };
-		98BCAA5E2C1CB35200919BA5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA5D2C1CB35200919BA5 /* ComplicationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9883310E2C202F1C00DDB054 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98BCAA272C1CB16800919BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 988330FF2C202F1B00DDB054;
+			remoteInfo = "Pedometer Watch ComplicationsExtension";
+		};
 		98BCAA412C1CB16900919BA5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98BCAA272C1CB16800919BA5 /* Project object */;
@@ -32,6 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		988331112C202F1C00DDB054 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				988331102C202F1C00DDB054 /* Pedometer Watch ComplicationsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98BCAA522C1CB16A00919BA5 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		988331002C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pedometer Watch ComplicationsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		988331022C202F1B00DDB054 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		988331042C202F1B00DDB054 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		988331072C202F1B00DDB054 /* Pedometer_Watch_Complications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer_Watch_Complications.swift; sourceTree = "<group>"; };
+		988331092C202F1B00DDB054 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		9883310B2C202F1C00DDB054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9883310D2C202F1C00DDB054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98BCAA2F2C1CB16800919BA5 /* Pedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BCAA322C1CB16800919BA5 /* PedometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerApp.swift; sourceTree = "<group>"; };
 		98BCAA342C1CB16800919BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,10 +89,18 @@
 		98BCAA562C1CB17B00919BA5 /* Pedometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pedometer.entitlements; sourceTree = "<group>"; };
 		98BCAA572C1CB19D00919BA5 /* Pedometer Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pedometer Watch App.entitlements"; sourceTree = "<group>"; };
 		98BCAA5A2C1CB21000919BA5 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
-		98BCAA5D2C1CB35200919BA5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		988330FD2C202F1B00DDB054 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988331052C202F1B00DDB054 /* SwiftUI.framework in Frameworks */,
+				988331032C202F1B00DDB054 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98BCAA2C2C1CB16800919BA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,12 +118,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		988331012C202F1B00DDB054 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				988331022C202F1B00DDB054 /* WidgetKit.framework */,
+				988331042C202F1B00DDB054 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		988331062C202F1B00DDB054 /* Pedometer Watch Complications */ = {
+			isa = PBXGroup;
+			children = (
+				988331072C202F1B00DDB054 /* Pedometer_Watch_Complications.swift */,
+				988331092C202F1B00DDB054 /* AppIntent.swift */,
+				9883310B2C202F1C00DDB054 /* Assets.xcassets */,
+				9883310D2C202F1C00DDB054 /* Info.plist */,
+			);
+			path = "Pedometer Watch Complications";
+			sourceTree = "<group>";
+		};
 		98BCAA262C1CB16800919BA5 = {
 			isa = PBXGroup;
 			children = (
 				98BCAA5A2C1CB21000919BA5 /* HealthKitManager.swift */,
 				98BCAA312C1CB16800919BA5 /* Pedometer */,
 				98BCAA432C1CB16900919BA5 /* Pedometer Watch App */,
+				988331062C202F1B00DDB054 /* Pedometer Watch Complications */,
+				988331012C202F1B00DDB054 /* Frameworks */,
 				98BCAA302C1CB16800919BA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +155,7 @@
 			children = (
 				98BCAA2F2C1CB16800919BA5 /* Pedometer.app */,
 				98BCAA3F2C1CB16900919BA5 /* Pedometer Watch App.app */,
+				988331002C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +188,6 @@
 				98BCAA462C1CB16900919BA5 /* ContentView.swift */,
 				98BCAA482C1CB16A00919BA5 /* Assets.xcassets */,
 				98BCAA4A2C1CB16A00919BA5 /* Preview Content */,
-				98BCAA5D2C1CB35200919BA5 /* ComplicationController.swift */,
 			);
 			path = "Pedometer Watch App";
 			sourceTree = "<group>";
@@ -143,6 +203,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		988330FF2C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 988331142C202F1C00DDB054 /* Build configuration list for PBXNativeTarget "Pedometer Watch ComplicationsExtension" */;
+			buildPhases = (
+				988330FC2C202F1B00DDB054 /* Sources */,
+				988330FD2C202F1B00DDB054 /* Frameworks */,
+				988330FE2C202F1B00DDB054 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pedometer Watch ComplicationsExtension";
+			productName = "Pedometer Watch ComplicationsExtension";
+			productReference = 988331002C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		98BCAA2E2C1CB16800919BA5 /* Pedometer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98BCAA532C1CB16A00919BA5 /* Build configuration list for PBXNativeTarget "Pedometer" */;
@@ -169,10 +246,12 @@
 				98BCAA3B2C1CB16900919BA5 /* Sources */,
 				98BCAA3C2C1CB16900919BA5 /* Frameworks */,
 				98BCAA3D2C1CB16900919BA5 /* Resources */,
+				988331112C202F1C00DDB054 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9883310F2C202F1C00DDB054 /* PBXTargetDependency */,
 			);
 			name = "Pedometer Watch App";
 			productName = "Pedometer Watch App";
@@ -189,6 +268,9 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					988330FF2C202F1B00DDB054 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					98BCAA2E2C1CB16800919BA5 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -212,11 +294,20 @@
 			targets = (
 				98BCAA2E2C1CB16800919BA5 /* Pedometer */,
 				98BCAA3E2C1CB16900919BA5 /* Pedometer Watch App */,
+				988330FF2C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		988330FE2C202F1B00DDB054 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9883310C2C202F1C00DDB054 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98BCAA2D2C1CB16800919BA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +329,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		988330FC2C202F1B00DDB054 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988331082C202F1B00DDB054 /* Pedometer_Watch_Complications.swift in Sources */,
+				9883310A2C202F1B00DDB054 /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98BCAA2B2C1CB16800919BA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,7 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				98BCAA472C1CB16900919BA5 /* ContentView.swift in Sources */,
-				98BCAA5E2C1CB35200919BA5 /* ComplicationController.swift in Sources */,
 				98BCAA452C1CB16900919BA5 /* PedometerApp.swift in Sources */,
 				98BCAA5C2C1CB21000919BA5 /* HealthKitManager.swift in Sources */,
 			);
@@ -262,6 +361,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9883310F2C202F1C00DDB054 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 988330FF2C202F1B00DDB054 /* Pedometer Watch ComplicationsExtension */;
+			targetProxy = 9883310E2C202F1C00DDB054 /* PBXContainerItemProxy */;
+		};
 		98BCAA422C1CB16900919BA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 98BCAA3E2C1CB16900919BA5 /* Pedometer Watch App */;
@@ -270,6 +374,67 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		988331122C202F1C00DDB054 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MPQRSMH4T7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pedometer Watch Complications/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pedometer Watch Complications";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.rdh.Pedometer.watchkitapp.Pedometer-Watch-Complications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		988331132C202F1C00DDB054 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MPQRSMH4T7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pedometer Watch Complications/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pedometer Watch Complications";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.rdh.Pedometer.watchkitapp.Pedometer-Watch-Complications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		98BCAA4D2C1CB16A00919BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -387,6 +552,7 @@
 		98BCAA502C1CB16A00919BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pedometer Watch App/Pedometer Watch App.entitlements";
@@ -421,6 +587,7 @@
 		98BCAA512C1CB16A00919BA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pedometer Watch App/Pedometer Watch App.entitlements";
@@ -537,6 +704,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		988331142C202F1C00DDB054 /* Build configuration list for PBXNativeTarget "Pedometer Watch ComplicationsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				988331122C202F1C00DDB054 /* Debug */,
+				988331132C202F1C00DDB054 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98BCAA2A2C1CB16800919BA5 /* Build configuration list for PBXProject "Pedometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
