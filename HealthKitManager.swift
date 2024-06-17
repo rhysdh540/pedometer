@@ -74,4 +74,14 @@ struct HealthData {
     let date: Date
     var steps: Int
     var distance: Double // in meters
+    
+    init() {
+        self.init(date: Date(timeIntervalSince1970: 0), steps: 0, distance: 0.0)
+    }
+    
+    init(date: Date, steps: Int, distance: Double) {
+        self.date = date
+        self.steps = steps
+        self.distance = distance
+    }
 }

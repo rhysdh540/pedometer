@@ -17,6 +17,8 @@
 		988331472C204EC600DDB054 /* DataDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988331462C204EC600DDB054 /* DataDisplayView.swift */; };
 		988331492C20526F00DDB054 /* PedometerWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988331482C20526F00DDB054 /* PedometerWidgets.swift */; };
 		9883314D2C20546A00DDB054 /* PedometerWidgetProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883314C2C20546A00DDB054 /* PedometerWidgetProviders.swift */; };
+		9897CC582C20738B007682C8 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897CC572C20738B007682C8 /* WeekView.swift */; };
+		9897CC5A2C207591007682C8 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897CC592C207591007682C8 /* DayView.swift */; };
 		98BCAA332C1CB16800919BA5 /* PedometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA322C1CB16800919BA5 /* PedometerApp.swift */; };
 		98BCAA352C1CB16800919BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCAA342C1CB16800919BA5 /* ContentView.swift */; };
 		98BCAA372C1CB16900919BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BCAA362C1CB16900919BA5 /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		988331462C204EC600DDB054 /* DataDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDisplayView.swift; sourceTree = "<group>"; };
 		988331482C20526F00DDB054 /* PedometerWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerWidgets.swift; sourceTree = "<group>"; };
 		9883314C2C20546A00DDB054 /* PedometerWidgetProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerWidgetProviders.swift; sourceTree = "<group>"; };
+		9897CC572C20738B007682C8 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		9897CC592C207591007682C8 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		98BCAA2F2C1CB16800919BA5 /* Pedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BCAA322C1CB16800919BA5 /* PedometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerApp.swift; sourceTree = "<group>"; };
 		98BCAA342C1CB16800919BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				98BCAA342C1CB16800919BA5 /* ContentView.swift */,
 				98BCAA362C1CB16900919BA5 /* Assets.xcassets */,
 				98BCAA382C1CB16900919BA5 /* Preview Content */,
+				9897CC572C20738B007682C8 /* WeekView.swift */,
+				9897CC592C207591007682C8 /* DayView.swift */,
 			);
 			path = Pedometer;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9897CC582C20738B007682C8 /* WeekView.swift in Sources */,
+				9897CC5A2C207591007682C8 /* DayView.swift in Sources */,
 				98BCAA352C1CB16800919BA5 /* ContentView.swift in Sources */,
 				98BCAA332C1CB16800919BA5 /* PedometerApp.swift in Sources */,
 				9883313F2C204AB800DDB054 /* HealthKitManager.swift in Sources */,
