@@ -37,25 +37,16 @@ class HealthKitManager {
         
         let stepsQuery = HKStatisticsQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
             let steps = Int(result?.sumQuantity()?.doubleValue(for: HKUnit.count()) ?? 0)
-            self.fetchDistanceData(for: date, steps: steps, completion: completion)
+            
+            let distanceQuery = HKStatisticsQuery(quantityType: self.distanceType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
+                let distance = result?.sumQuantity()?.doubleValue(for: HKUnit.meter()) ?? 0
+                completion(HealthData(date: startOfDay, steps: steps, distance: distance))
+            }
+            
+            self.healthStore.execute(distanceQuery)
         }
 
         healthStore.execute(stepsQuery)
-    }
-
-    private func fetchDistanceData(for date: Date, steps: Int, completion: @escaping (HealthData) -> Void) {
-        let startOfDay = Calendar.current.startOfDay(for: date)
-        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
-
-        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: endOfDay, options: .strictStartDate)
-        
-        let distanceQuery = HKStatisticsQuery(quantityType: distanceType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, error in
-            let distance = result?.sumQuantity()?.doubleValue(for: HKUnit.meter()) ?? 0
-            let healthData = HealthData(date: startOfDay, steps: steps, distance: distance)
-            completion(healthData)
-        }
-
-        healthStore.execute(distanceQuery)
     }
 
     func fetchHealthDataRange(startDate: Date, endDate: Date, completion: @escaping ([HealthData]) -> Void) {
