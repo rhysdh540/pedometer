@@ -73,6 +73,5 @@ class HealthKitManager {
 struct HealthData {
     let date: Date
     var steps: Int
-    var distance: Double
+    var distance: Double // in meters
 }
-
