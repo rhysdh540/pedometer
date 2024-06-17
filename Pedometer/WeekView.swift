@@ -33,9 +33,7 @@ struct WeekView : View {
         let now = Date()
         let lastWeek = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: now)!
         HealthKitManager.shared.fetchHealthDataRange(startDate: lastWeek, endDate: now) { data in
-            DispatchQueue.main.async {
-                self.healthData = data
-            }
+            self.healthData = data
         }
     }
     

@@ -65,6 +65,7 @@ class HealthKitManager {
         }
 
         dispatchGroup.notify(queue: .main) {
+            healthDataArray.sort { $0.date < $1.date }
             completion(healthDataArray)
         }
     }
