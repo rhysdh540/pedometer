@@ -21,7 +21,7 @@ struct StepCountWidget: Widget {
     let kind: String = "StepCountWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: StepCountProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: HealthDataProvider(dataType: \.steps, placeholderValue: 0)) { entry in
             DataDisplayView(data: "\(entry.data)\nSteps")
         }
         .configurationDisplayName("Step Count Widget")
@@ -33,8 +33,8 @@ struct DistanceWidget: Widget {
     let kind: String = "DistanceWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: DistanceProvider()) { entry in
-            DataDisplayView(data: String(format: "%.2f km", entry.data as! Double / 1000.0))
+        StaticConfiguration(kind: kind, provider: HealthDataProvider(dataType: \.distance, placeholderValue: 0.0)) { entry in
+            DataDisplayView(data: String(format: "%.2f km", entry.data / 1000.0))
         }
         .configurationDisplayName("Distance Widget")
         .description("Shows your current distance moved.")

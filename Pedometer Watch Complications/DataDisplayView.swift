@@ -1,5 +1,5 @@
 //
-//  StepCountView.swift
+//  DataDisplayView.swift
 //  Pedometer Watch ComplicationsExtension
 //
 //  Created by Rhys de Haan on 6/17/24.

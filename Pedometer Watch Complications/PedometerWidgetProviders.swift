@@ -7,45 +7,36 @@
 
 import WidgetKit
 
-struct StepCountProvider: TimelineProvider {
-    func placeholder(in context: Context) -> DatedEntry {
-        DatedEntry(date: Date(), data: 0)
+
+class HealthDataProvider<T>: TimelineProvider {
+    private let dataType: KeyPath<HealthData, T>
+    private let placeholderValue: T
+
+    init(dataType: KeyPath<HealthData, T>, placeholderValue: T) {
+        self.dataType = dataType
+        self.placeholderValue = placeholderValue
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (DatedEntry) -> Void) {
-        let entry = DatedEntry(date: Date(), data: 0)
+    func placeholder(in context: Context) -> DatedEntry<T> {
+        DatedEntry(date: Date(), data: placeholderValue)
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (DatedEntry<T>) -> Void) {
+        let entry = DatedEntry(date: Date(), data: placeholderValue)
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<DatedEntry<T>>) -> Void) {
         HealthKitManager.shared.fetchHealthData(for: Date()) { healthData in
-            let entry = DatedEntry(date: Date(), data: healthData.steps)
-            let timeline = Timeline(entries: [entry], policy: .atEnd)
+            let entry = DatedEntry(date: Date(), data: healthData[keyPath: self.dataType])
+            let nextUpdate = Calendar.current.date(byAdding: .second, value: 30, to: Date())!
+            let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
             completion(timeline)
         }
     }
 }
 
-struct DistanceProvider: TimelineProvider {
-    func placeholder(in context: Context) -> DatedEntry {
-        DatedEntry(date: Date(), data: 0)
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (DatedEntry) -> Void) {
-        let entry = DatedEntry(date: Date(), data: 0)
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        HealthKitManager.shared.fetchHealthData(for: Date()) { healthData in
-            let entry = DatedEntry(date: Date(), data: healthData.distance)
-            let timeline = Timeline(entries: [entry], policy: .atEnd)
-            completion(timeline)
-        }
-    }
-}
-
-struct DatedEntry: TimelineEntry {
+struct DatedEntry<T>: TimelineEntry {
     let date: Date
-    var data: Any
+    var data: T
 }
