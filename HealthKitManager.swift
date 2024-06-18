@@ -13,20 +13,19 @@ class HealthKitManager {
     let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
     let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
 
-    private let userDefaults = UserDefaults.standard
     private let healthKitAuthKey = "RDHPedometerHKAuthStatus"
 
     func requestAuthorization(completion: @escaping (Bool) -> Void) {
         healthStore.requestAuthorization(toShare: nil, read: [stepType, distanceType]) { success, error in
             if success {
-                self.userDefaults.set(true, forKey: self.healthKitAuthKey)
+                UserDefaults.standard.set(true, forKey: self.healthKitAuthKey)
             }
             completion(success)
         }
     }
     
     func isAuthorized() -> Bool {
-        return userDefaults.bool(forKey: healthKitAuthKey)
+        return UserDefaults.standard.bool(forKey: healthKitAuthKey)
     }
 
     func fetchHealthData(for date: Date, completion: @escaping (HealthData) -> Void) {

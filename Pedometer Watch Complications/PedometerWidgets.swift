@@ -24,8 +24,8 @@ struct StepCountWidget: Widget {
         StaticConfiguration(kind: kind, provider: HealthDataProvider(dataType: \.steps, placeholderValue: 0)) { entry in
             DataDisplayView(data: "\(entry.data)\nSteps")
         }
-        .configurationDisplayName("Step Count Widget")
-        .description("Shows your current step count.")
+        .configurationDisplayName("Step Count")
+        .description("Shows the number of steps you've taken today.")
     }
 }
 
@@ -36,7 +36,7 @@ struct DistanceWidget: Widget {
         StaticConfiguration(kind: kind, provider: HealthDataProvider(dataType: \.distance, placeholderValue: 0.0)) { entry in
             DataDisplayView(data: String(format: "%.2f km", entry.data / 1000.0))
         }
-        .configurationDisplayName("Distance Widget")
-        .description("Shows your current distance moved.")
+        .configurationDisplayName("Distance Traveled")
+        .description("Shows how far you've moved today.")
     }
 }
