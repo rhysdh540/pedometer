@@ -41,5 +41,5 @@ struct DayView : View {
 }
 
 #Preview {
-    ContentView()
+    DayView()
 }

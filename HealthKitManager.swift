@@ -58,14 +58,17 @@ class HealthKitManager {
         while currentDate <= endDate {
             dispatchGroup.enter()
             fetchHealthData(for: currentDate) { healthData in
-                healthDataArray.append(healthData)
+                var index = 0
+                while(index < healthDataArray.count && healthDataArray[index].date < healthData.date) {
+                    index += 1
+                }
+                healthDataArray.insert(healthData, at: index)
                 dispatchGroup.leave()
             }
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
         }
 
         dispatchGroup.notify(queue: .main) {
-            healthDataArray.sort { $0.date < $1.date }
             completion(healthDataArray)
         }
     }

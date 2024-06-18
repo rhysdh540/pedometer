@@ -45,5 +45,5 @@ struct WeekView : View {
 }
 
 #Preview {
-    ContentView()
+    WeekView()
 }
